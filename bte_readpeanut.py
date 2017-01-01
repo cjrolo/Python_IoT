@@ -1,5 +1,7 @@
 from gattlib import GATTRequester, GATTResponse
 
+from devices import devices_map as peaners
+
 termo_peaners = [GATTRequester("00:A0:50:01:11:2B"),
                  GATTRequester("00:A0:50:0C:0F:24"),
                  GATTRequester("00:A0:50:06:27:14")]
