@@ -4,6 +4,11 @@ class Peaner(object):
     '''
     This class represents the Thermo Peanut
     '''
+    def __new__(cls, address):
+        if address in DEVICES_MAP:
+            return super(Peaner, cls).__new__(cls)
+        raise Exception("Unknown device!")
+
     def __init__(self, address):
         self.address = address
         self.name = DEVICES_MAP[address]["name"]
