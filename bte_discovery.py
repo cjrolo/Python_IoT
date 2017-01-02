@@ -3,8 +3,10 @@ from gattlib import DiscoveryService
 from peaners import Peaner
 
 parser = argparse.ArgumentParser(description='Finds Bluethoot Devices.')
-parser.add_argument('-t', action='store_const', const=30, help='Time to wait for devices')
+parser.add_argument('-t', action='store', help='Time to wait for devices', type=int)
 args = parser.parse_args()
+if (not args.t):
+    args.t = 30
 
 print("Discovering devices! Wait {}sec...".format(args.t))
 
